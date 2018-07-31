@@ -1,0 +1,68 @@
+
+
+<header class="text-right">
+  <span class="corporation">ABC Corporation,LLC</span>&nbsp;&nbsp;<span class="avatar">SS</span>&nbsp;
+</header>
+<div class="heading">
+  <h3>Work Inbox</h3>
+
+  <div class="workinbox-heading-tabs">
+    <ul>
+      <li
+        *ngFor="let tab of tabs" (click)="workInboxDataFn(tab.key,false)" id="{{tab.key}}" [ngClass]="{active:tab.active}">
+        <a href="javascript:void(0)">{{tab.title}}
+          <span class="badge" *ngIf="tab.count > 0">{{tab.count}}</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<!--this should be displayed when user clicks assigned to me tasks-->
+<div class="panel panel-default" id="worktable">
+
+  <div class="nav subitemsnav">
+    <ul class="nav navbar-nav work-tabs links">
+      <li *ngFor="let subMenuItem of workInbox let i=index"
+          [ngClass]="{subactive: subMenuItem.isShow}"
+          (click)="setInnerTab(i)">
+        <a href="javascript:void(0)" id="{{i}}" >{{subMenuItem.name}} <span *ngIf="subMenuItem.count">({{subMenuItem.count}})</span></a>
+
+      </li>
+    </ul>
+  </div>
+  <div>
+    <accordion class="accordion">
+      <accordion-group *ngFor="let  category of selectedInboxData" #group [isOpen]="status.isOpen">
+        <div accordion-heading>
+          <span class="heading">
+            {{category.name}} <span class="badge">{{category.data.length}}</span>
+          </span>
+          <i class="pull-right float-xs-right glyphicon"
+             [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-up': !group?.isOpen}"></i>
+        </div>
+        <div>
+          <div class="workInbox-NoDataMessage"  *ngIf="category.data.length <= 0">
+               {{category.message}}
+          </div>
+          <div class="table" *ngIf="category.data.length > 0">
+              <div class="table-header-group" >
+                <div class="table-cell" *ngFor="let i of category.headerNames|returnArray">{{i.value}}</div>
+              </div>
+
+              <div class="table-row" *ngFor="let data of category.data let ind=index" (mouseover)="show()" (mouseleave)="hide()">
+          <span class="table-cell" *ngFor="let i of category.headerNames|returnArray">
+            <span *ngIf="i.key!=='actions'">{{data[i.key]}}</span>
+            <work-inbox-actions *ngIf="i.key === 'actions' "  [data]="data" [category]="category" [index]="ind" (ShowHistoryData)="ShowHistoryData($event)">
+
+            </work-inbox-actions>
+          </span>
+
+                <history  *ngIf="data.isShowHistory" [data]="data"> </history>
+              </div>
+          </div>
+        </div>
+      </accordion-group>
+    </accordion>
+  </div>
+</div>

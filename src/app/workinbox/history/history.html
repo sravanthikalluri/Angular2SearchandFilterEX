@@ -1,0 +1,48 @@
+
+<div *ngFor="let details of historyData">
+
+  <div class="message-item history-item" *ngIf="details.status !== 'Pending'">
+    <div class="message-inner">
+      <div class="row">
+        <div class="message-head clearfix">
+          <div class="col-md-12 no-pad">
+
+            <div class="col-md-7 col-sm-7">
+              <p>{{details.type}} </p>
+              <p>{{details.status}}</p>
+            </div>
+            <div class="effective-date">
+              <div class="col-md-5 col-sm-5 text-right">
+                <div class="history-time-line-date" > {{details.completedBy}}</div>
+                <div class="history-time-line-date"> {{ details.dateEntered | date:'MM/dd/yyyy'}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="message-item effective-date history-item" *ngIf="details.status === 'Pending'">
+
+    <div class="message-inner border-dotted">
+      <div class="row">
+        <div class="message-head clearfix">
+          <div class="col-md-12 no-pad">
+
+            <div class="col-md-7 col-sm-7">
+              <p>{{details.role}} </p>
+              <p>{{details.status}}</p>
+            </div>
+            <div class="effective-date">
+              <div class="col-md-5  col-sm-5 text-right">
+                <div class="history-time-line-date"> {{details.completedBy}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

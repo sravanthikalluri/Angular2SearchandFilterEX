@@ -1,0 +1,9 @@
+<div class="searchbox">
+  <input type="text" name="search" #termValue   id="search1" [(ngModel)]="managerData"  (ngModelChange)="getSearchedData(managerData,showBlock)">
+  <i class="glyphicon glyphicon-search search-icon"></i>
+</div>
+<div class="search-dropdown" *ngIf="showManager === showBlock">
+  <ul *ngFor="let manager of filtered | unique:showBlock">
+    <li (click)="setChangeReqData(manager[showBlock],showBlock)">{{manager[showBlock]}}</li>
+  </ul>
+</div>

@@ -1,0 +1,59 @@
+
+th{
+  color: #969DAB;
+}
+th a i{
+  color: #000;
+}
+th{
+  padding: 15px 10px ;
+}
+.group-change-filter-list {
+  position: absolute;
+  z-index: 99;
+  background: #ffffff;
+  color: #888888;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  padding: 5px;
+  min-width: 220px;
+  max-width: 350px;
+  border: 1px solid;
+  max-height:300px;
+  overflow-y:auto;
+  display: none;
+}
+.group-change-filter-list .show{
+  display: block !important;
+}
+
+.group-change-filter-list .list-sub-data {
+  padding: 0;
+  margin: 0;
+}
+
+.group-change-filter-list .list-sub-data :hover {
+  background: #D9EAF8;
+}
+
+.group-change-filter-list .list-sub-data .action-checkbox label {
+  margin-bottom: 0px !important;
+}
+
+.group-change-filter-list .list-sub-data .action-checkbox label p {
+  font-size: 12px !important;
+}
+
+.group-change-filter-list input[type="checkbox"] {
+  height: 15px;
+  position: relative;
+  top: 1px;
+  width: 17px;
+  margin: 0 4px 10px 4px;
+}
+
+.group-change-filter-list .active {
+  background: #D9EAF8;
+}
+

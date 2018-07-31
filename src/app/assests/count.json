@@ -1,0 +1,12 @@
+{
+  "data": {
+    "assignedToMeCount": "6",
+    "assignedToOthersCount": "472",
+    "completedTaskCount": "126",
+    "unassignedCount": "77"
+  },
+  "_requestId": "65e1865d-a5d4-427d-8193-ea0083b4b04d",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

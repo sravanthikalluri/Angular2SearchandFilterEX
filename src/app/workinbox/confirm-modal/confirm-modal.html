@@ -1,0 +1,12 @@
+<modal #modal1 id="modal1">
+  <modal-header [show-close]="true" (click)="closeModal()">
+    <h4 class="modal-title">Confirmation</h4>
+  </modal-header>
+  <modal-body>
+    {{confirmMessage}}
+  </modal-body>
+  <modal-footer>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="archiveData(data)">{{yes_btn}}</button>
+    <button type="button" class="btn btn-primary"  data-dismiss="modal" (click)="closeModal()">{{no_btn}}</button>
+  </modal-footer>
+</modal>

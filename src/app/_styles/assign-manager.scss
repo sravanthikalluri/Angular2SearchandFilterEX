@@ -1,0 +1,93 @@
+
+.assign-manager-detailsHeading {
+  padding:10px 50px;
+}
+assign-manager search .searchbox {
+   padding-left: 30px;
+   border-radius: 15px;
+   border: 1px #B3BDC7 solid;
+   padding: 5px 20px 5px 25px;
+   color: #B3BDC7;
+   width: 125%;
+ }
+.assignManagerTable {
+  width:100%;
+  overflow-y:auto;
+}
+.assignManagerTbody  {
+  height: 50%;
+  overflow: auto;
+  max-height: 100vh;
+}
+assign-manager .glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  color: black;
+  -moz-osx-font-smoothing: grayscale;
+}
+#changeReqModal .modal-dialog {
+  position: relative;
+  height: 900px !important;
+  width: 650px !important;
+  margin: 30px auto !important;
+}
+#changeReqModal .modal-body .section {
+  padding: 20px 0 !important;
+  border-bottom: 1px solid #ddd !important;
+  float: left !important;
+  width: 100% !important;
+}
+#changeReqModal .changeReq-text-color {
+  color:#AEB5C3;
+}
+#changeReqModal .title-color {
+  color: #444c5c;
+}
+.section h5 {
+  font-weight: 500;
+  padding:0px 16px;
+}
+.searchbox input {
+  padding-left: 30px;
+  border: 1px #B3BDC7 solid;
+  padding: 5px 25px 5px 25px;
+  color: #B3BDC7;
+  width: 103% !important;
+}
+.searchbox .glyphicon {
+  position: relative;
+  top: -25px;
+  float:right;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  color: #AEB5C3;
+  -moz-osx-font-smoothing: grayscale;
+}
+.search-dropdown{
+  display: block;
+  border: 1px solid silver;
+  width: 103%;
+  border-top: none;
+}
+.search-dropdown ul {
+  list-style: none;
+}
+.search-dropdown ul li{
+color: black;
+display: block;
+padding: 4px 8px;
+border-bottom: none;
+}
+.mydp .btnleftborder {
+ border:none!important;
+}

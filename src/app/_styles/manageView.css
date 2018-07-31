@@ -1,0 +1,248 @@
+
+.corporation{
+  border-right:1px solid grey;
+}
+.avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background-color: #EEF0F2;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+header{
+background-color: white;
+min-height: 50px;
+text-align: right;
+display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+header span{
+  padding: 25px;
+}
+.heading{
+  margin-left: 2%;
+}
+.empTable{
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(216, 221, 226, 0.75);
+  -webkit-box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+  -moz-box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+  box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+
+}
+.panel{
+  padding: 25px;
+  background: #EEF0F2;
+}
+.empTable thead {
+  border-bottom: 1px solid #ddd;
+}
+.empTable thead th{
+  color: #969DAB;
+}
+.empTable thead th a i{
+  color: #000;
+}
+.empTable thead tr th,.empTable tbody tr td{
+  padding: 15px 10px ;
+}
+.empTable tbody tr:nth-child(even){
+  background-color: #EEF0F2;
+}
+.empid{
+  display: flex;
+  color:#A7ADB8;
+}
+
+/*pagination-controls{
+  float: right;
+}
+pagination-controls ul li a:first-child{
+  border-right:1px solid black;
+}
+pagination-controls ul li a:last-child{
+  border-left:1px solid black;
+}*/
+
+.searchbox,.pagination
+{
+  position:relative;
+  margin-top:1%;
+  margin-bottom:2%;
+  margin-right: 2%;
+}
+/*.pagination button:first-child button:last-child{
+  background-color: white;
+  width:50px;
+}*/
+.pagination button{
+
+  background-color: #FFFFFF;
+  font-weight: bold;
+}
+.middlebtn{
+  position: relative;
+  top:1px;
+}
+.searchbox input{
+  padding-left: 30px;
+  border-radius: 15px;
+  border: 1px #B3BDC7 solid;
+  padding: 5px 25px 5px 25px;
+  color: #B3BDC7;
+ width:125%
+
+}
+.searchbox .search-icon{
+  position:absolute;
+  color:#B3BDC7;
+  top:10px;
+  left:5px;
+
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top:1%;
+  margin-bottom:2%;
+  margin-right:2%;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color:#70C17C;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #70C17C;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.togglelabel{
+  position:absolute;
+  margin-top:1%;
+  margin-bottom:2%;
+  margin-left:65%;
+}
+.pretag{
+  background-color:transparent;
+  border:none;
+}
+pagination-controls{
+  margin-top:1%;
+  margin-right:2%;
+  background-color: #FFFFFF;
+  padding: 0px 9px;
+  padding-top: 5px;
+  border-radius: 3px;
+  border: solid 1px #c0c0c0;
+rgba(255,255,255, .8), 0px 1px 3px rgba(0,0,0, .1);
+  font-size: .875em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #717171;
+  text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+}
+
+.displayrecords{
+  margin-right: 2%;
+}
+
+
+filter{
+  display: inline-block;
+}
+.group-change-filter-list {
+  position: absolute;
+  z-index: 99;
+  background: #ffffff;
+  color: #888888;
+  width: auto;
+  height:auto;
+  padding: 5px;
+  min-width: 220px;
+  max-width: 350px;
+  border: 1px solid;
+  max-height:300px;
+
+}
+
+.group-change-filter-list .list-sub-data {
+
+  padding: 0;
+  margin: 0;
+}
+
+.group-change-filter-list .list-sub-data :hover {
+  background: #D9EAF8;
+}
+
+.group-change-filter-list .list-sub-data .action-checkbox label {
+  margin-bottom: 0px !important;
+}
+
+.group-change-filter-list .list-sub-data .action-checkbox label p {
+  font-size: 12px !important;
+}
+
+.group-change-filter-list input[type="checkbox"] {
+  height: 15px;
+  position: relative;
+  top: 1px;
+  width: 17px;
+  margin: 0 4px 10px 4px;
+}
+
+.group-change-filter-list .active {
+  background: #D9EAF8;
+}
+

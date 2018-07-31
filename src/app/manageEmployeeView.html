@@ -1,0 +1,139 @@
+<!--
+<div>
+ &lt;!&ndash; FIRST NAME: <input type="text" autofocus />&lt;!&ndash;&ndash;&gt;&ndash;&gt;
+
+  <div *ngFor="let item of items">
+     <input  type="text" [(ngModel)]="item.name" id="{{item.name}}" />
+  </div>
+  <div>
+    {{dd|date:'MMM dd yyyy'}}
+  </div>
+</div>
+&lt;!&ndash;<div style="display: inline">
+  <button class="dropDown-class" (click)="showDropDown()">Select<span class="caret"></span></button>
+  <div *ngIf="Show" >
+    <select name="select"  [(ngModel)]="selectedValue" (click)="store(selectedValue)" multiple class="group-change-filter-list" >
+      <option *ngFor="let item of manageData" value="{{item.Position}}">
+        {{item.Position}}
+      </option>
+    </select>
+  </div>
+  <div *ngFor="let item of manageData let i=index" class="list-sub-data" >
+    <div class="action-checkbox">
+      <p>
+        <input id="{{item[type]}}" type="checkbox" name="{{item[type]}}"
+               [attr.checked]="i < 5 ? true : null"/>
+        {{item[type] === null || item[type] === undefined ? "(Blanks)" :
+        item[type]}}</p>
+    </div>
+  </div>
+  <div>
+    <p>Item that is selected:</p>
+    <button (click)="save()">SaveObject</button>
+  </div>
+</div>&ndash;&gt;
+
+
+<div style="background-color: #B3BDC7;display:inline-flex">
+  <div style="margin-left: 30%">jgfodkjgldfmglvmhbnhgjh</div>
+  <div style="margin-left: 70%">dkjfodjglfkdjgkljvg </div>
+</div>
+
+&lt;!&ndash;<div class="dropdown">
+  <button class="dropDown-class" (click)="showDropDown()">Select<span class="caret"></span></button>
+
+  <div>
+    <p>Item that is selected:</p>
+    <div class="panel panel-default">
+      {{selectedValue}}
+    </div>
+  </div>
+</div>
+<div *ngIf="Show" >
+  <select name="select"  [(ngModel)]="selectedValue" multiple class="group-change-filter-list" >
+    <option *ngFor="let item of manageData" value="{{item.Position}}">
+      {{item.Position}}
+    </option>
+  </select>
+</div>
+
+-->
+
+<header class="text-right">
+  <span class="corporation">ABC Corporation,LLC</span>&nbsp;&nbsp;<span class="avatar">SS</span>&nbsp;
+</header>
+
+<div class="heading">
+  <h2>Manage Employees</h2>
+</div>
+<hr>
+<div>
+
+  <search (filterBySearchData)="filterBySearchData($event)" [totalRecords]="totalRecords"  [selectedPositions] = "selectedPositions" [reSet]="reSet" [totalRecordsCopy]="totalRecordsCopy" [isChecked]="isChecked"></search>
+  <!--<div class="searchbox pull-right">
+    <input type="text" name="search" #termValue [(ngModel)]="userInput" (ngModelChange)="checkForPagination(userInput)" placeholder="search Employees...." id="search">
+    <i class="glyphicon glyphicon-search search-icon"></i>
+  </div>-->
+
+  <div class="togglelabel pull-right"><label><h6 class="text-right">Show Terminated</h6><h6 class="text-right">Employees</h6></label></div>
+  <label class="switch pull-right">
+    <input type="checkbox"  [(ngModel)]="isChecked" (click)="showTerminatedEmployees(!isChecked);">
+    <div class="slider round"></div>
+  </label>
+</div>
+
+
+<div class="panel panel-default" id="employeetable">
+  <table class="empTable">
+<thead>
+    <tr *ngIf="manageData">
+      <th> EmployeeName</th>
+      <th> Position
+        <filter (filteredData)="filteredData($event)" [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="manageData" [filterByData]="filterByData" [reSet]="reSet" [type]="'Position'"></filter>
+      </th>
+      <th>
+        Status
+        <filter (filteredData)="filteredData($event)"  [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="manageData" [filterByData]="filterByData"  [reSet]="reSet" [type]="'Status'"></filter>
+      </th>
+      <th>
+        Department
+        <filter (filteredData)="filteredData($event)"  [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="manageData" [filterByData]="filterByData"  [reSet]="reSet"  [type]="'Department'"></filter>
+      </th>
+      <th>
+        Location
+        <filter (filteredData)="filteredData($event)"  [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="manageData" [filterByData]="filterByData" [reSet]="reSet" [type]="'Location'"></filter>
+      </th>
+      <th>
+        ServiceDate
+      </th>
+      <th>
+        DirectManager
+      </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of filterByData ">
+      <td><span>{{item.EmployeeName}}</span><sub><span class="empid">{{item.EmployeeId}}</span></sub></td>
+      <td>{{item.Position}}</td>
+      <td>{{item.Status}}</td>
+      <td>{{item.Department}}</td>
+      <td>{{item.Location}}</td>
+      <td>{{item.ServiceDate}}</td>
+      <td>{{item.DirectManager}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!--&lt;!&ndash;<div>
+ <pagination-controls class="pull-right" (pageChange)="page = $event" id="1"
+                       maxSize="{{alldata ? alldata.length/5: ''}}"
+                       directionLinks="true"
+                       autoHide="true">
+  </pagination-controls>
+</div>&ndash;&gt;-->
+<div class="pagination pull-right">
+  <button [disabled]="true"  class="btn btn-default btn-sm glyphicon glyphicon-triangle-left pull-left"></button>
+  <button  class="btn btn-default btn-sm middlebtn pull-left">{{manageDataLength}} of {{totalRecordsLength}}</button>
+  <button [disabled]="manageDataLength == totalRecordsLength" (click)="showMore()"  class="btn btn-default btn-sm glyphicon glyphicon-triangle-right pull-left"></button>
+</div>

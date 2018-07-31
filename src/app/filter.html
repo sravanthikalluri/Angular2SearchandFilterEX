@@ -1,0 +1,30 @@
+<div (mouseleave)="hideBox()">
+  <span (click)="searchPos(true)"> <i class="glyphicon glyphicon-filter"> </i> </span>
+  <div [ngClass]="{'show': showPosition}" class="group-change-filter-list ">
+    <div *ngFor="let item of manageData | unique:type;" class="list-sub-data">
+      <div class="action-checkbox">
+        <p>
+          <input id="{{item[type]}}" type="checkbox" name="{{item[type]}}"
+                 (click)="filteredPositionData(item[type],type)"  [attr.Checked]="index <5 ?checked:null"/>
+          {{item[type] === null || item[type] === undefined ? "(Blanks)" :
+          item[type]}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--<div *ngFor="let status of filterByData |  unique:type;">
+   <div *ngIf="status[type] == 'Active'" >
+     <div *ngFor="let item of filterByData | unique:type;" class="list-sub-data">
+       <div class="action-checkbox">
+  <p>
+    <input id="{{item[type]}}" type="checkbox" name="{{item[type]}}"
+           (click)="filteredPositionData(item[type],type)"/>
+    {{item[type] === null || item[type] === undefined ? "(Blanks)" :
+    item[type]}}</p>
+</div>
+</div>
+   </div>
+</div>-->

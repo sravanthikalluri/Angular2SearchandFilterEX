@@ -1,0 +1,54 @@
+{
+  "headings":[{
+    "h1":"Electronic I-9 Entries"
+  },
+    {
+      "h1":"Employment Change Request"
+    },
+    {
+      "h1":"Manager Assignments"
+    },
+    {
+      "h1":"New Hire/Rehire Entry "
+    },
+    {
+      "h1": "Time Off Requests "
+    }
+  ],
+  "tabs" :[
+    {
+      "title": "ASSIGNED TO ME",
+      "key": "assignedToMe",
+      "active": true,
+      "count" : 10,
+      "isShow": true,
+      "countKey" : "assignedToMeCount"
+    },
+    {
+      "title": "ASSIGNED TO OTHERS",
+      "key": "assignedToOthers",
+      "active": false,
+      "count" : 0,
+      "isShow": false,
+      "countKey" : "assignedToOthersCount"
+    },
+    {
+      "title": "UNASSIGNED TASKS",
+      "key": "UnAssigned",
+      "active": false,
+      "count" : 0,
+      "isShow": false,
+      "countKey" : "unassignedCount"
+    },
+    {
+      "title": "COMPLETED TASKS",
+      "key": "Completed",
+      "active": false,
+      "count" : 0,
+      "isShow": true,
+      "countKey" : "completedTaskCount"
+    }],
+  "":{
+
+  }
+}

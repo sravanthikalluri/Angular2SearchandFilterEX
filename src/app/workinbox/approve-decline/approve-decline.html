@@ -1,0 +1,15 @@
+<modal #approval id="approval">
+  <modal-header [show-close]="true" (click)="closeModal()">
+    <h4 class="modal-title">{{modalTitle}}</h4>
+  </modal-header>
+  <modal-body>
+    <div><span>Comment:</span></div>
+    <textarea class="text-area" [(ngModel)]="approveMyOwnComment" rows="4" cols="80"></textarea>
+  </modal-body>
+  <modal-footer>
+    <button type="button" class="btn btn-primary" data-dismiss="modal"
+            (click)="approveDeclineMyOwnTask()">{{buttonTitle}}
+    </button>
+    <button type="button" class="btn"  data-dismiss="modal" (click)="closeModal()">Cancel</button>
+  </modal-footer>
+</modal>

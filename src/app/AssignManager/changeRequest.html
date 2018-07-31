@@ -1,0 +1,54 @@
+<modal #changeReqModal id="changeReqModal">
+  <modal-header [show-close]="true" (click)="closeModal()">
+    <h4 class="modal-title">Change Request Details</h4>
+  </modal-header>
+  <modal-body>
+    <div class="section">
+       <div class="col-sm-6">
+         <h6 class="changeReq-text-color bold">Manager Change For:</h6>
+         <h6 class="bold title-color" >{{changeReqData.name}}</h6>
+         <h6 class="title-color">({{changeReqData.employeeId}})</h6>
+       </div>
+      <div class="col-sm-6">
+        <h6 class="changeReq-text-color bold" >Effective Date:</h6>
+        <my-date-picker [options]="myDatePickerOptions"  [(ngModel)]="currentDate.startDate"
+                        (dateChanged)="onDateChanged($event)"></my-date-picker>
+      </div>
+    </div>
+    <div class="section">
+      <div class="col-sm-6">
+        <h6 class="changeReq-text-color bold">Position:</h6>
+        <h6 class="bold title-color" >{{changeReqData.position}}</h6>
+        <h6 class="changeReq-text-color bold">Department:</h6>
+        <h6 class="title-color">{{changeReqData.departement}}</h6>
+      </div>
+      <div class="col-sm-6">
+        <h6 class="changeReq-text-color bold">Status:</h6>
+        <h6 class="bold title-color" >{{changeReqData.position}}</h6>
+        <h6 class="changeReq-text-color bold">Location:</h6>
+        <h6 class="title-color">{{changeReqData.location}}</h6>
+      </div>
+    </div>
+    <div class="section">
+      <h5>Direct Manager</h5>
+      <div class="col-sm-6">
+        <h6 class="changeReq-text-color bold">Current Direct Manager</h6>
+        <h6 class="bold title-color" >{{changeReqData.directManagerName}}</h6>
+        <h6 class="changeReq-text-color bold">New Direct Manager:</h6>
+        <search-dropdown [assignManagerData]="assignManagerData" [showBlock]="'directManagerName'" (getReqData)="getReqData($event)"></search-dropdown>
+      </div>
+      <div style="clear: both"></div>
+      <h5>Work Supervisor</h5>
+      <div class="col-sm-6">
+        <h6 class="changeReq-text-color bold">Current Work Supervisor</h6>
+        <h6 class="bold title-color" >{{changeReqData.workSupervisorName}}</h6>
+        <h6 class="changeReq-text-color bold">New Work Supervisor:</h6>
+        <search-dropdown [assignManagerData]="assignManagerData" [showBlock]="'workSupervisorName'" (getReqData)="getReqData($event)"></search-dropdown>
+      </div>
+    </div>
+  </modal-body>
+  <modal-footer>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="!(directManager || supervisor)" (click)="saveChangeReq(changeReqData)">Submit</button>
+      <button type="button" class="btn"  data-dismiss="modal" (click)="closeModal()">Cancel</button>
+  </modal-footer>
+</modal>

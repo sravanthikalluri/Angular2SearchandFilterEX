@@ -1,0 +1,64 @@
+<!--
+<div>
+  <p [attr.disabled]="isDisabled ? true : null">Text is disabled</p>
+  <form [attr.disabled]="isDisabled ? true : null">
+    <input type="text" [attr.disabled]="isDisabled ? true : null">
+  </form>
+<h2>h2 heading.</h2></div>-->
+
+<div myExample>hello this is custom directive</div>
+<header class="text-right">
+  <span class="corporation">ABC Corporation,LLC</span>&nbsp;&nbsp;<span class="avatar">SS</span>&nbsp;
+</header>
+
+<div class="assign-manager-detailsHeading">
+  <h2>Assign Manager</h2>
+  <h6>As Of Today, {{weekDay+ " "}} {{currentDate}}</h6>
+  <search (filterBySearchData)="filterBySearchData($event)"   [selectedPositions] = "selectedPositions" [reSet]="reSet" [totalRecordsCopy]="totalRecordsCopy"></search>
+</div>
+<div class="assignManagerTable">
+  <div class="panel panel-default" id="employeetable">
+    <table class="empTable">
+      <thead>
+      <tr >
+        <th> Employee Name
+          <span [ngClass]="{'glyphicon glyphicon-sort-by-alphabet  medium': sortReverse,'glyphicon glyphicon-sort-by-alphabet-alt medium': !sortReverse}" (click)="sortReverse=!sortReverse" > </span>
+        </th>
+        <th> Position
+          <filter (filteredData)="filteredData($event)" [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="assignManagerData" [filterByData]="filterByData"  [type]="'position'" [reSet]="reSet"></filter>
+        </th>
+        <th>
+          Department
+          <filter (filteredData)="filteredData($event)" [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="assignManagerData" [filterByData]="filterByData"  [type]="'departement'" [reSet]="reSet"></filter>
+        </th>
+        <th>
+          Location
+          <filter (filteredData)="filteredData($event)" [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="assignManagerData" [filterByData]="filterByData"  [type]="'location'" [reSet]="reSet" ></filter>
+        </th>
+        <th>
+          Direct Manager
+          <filter (filteredData)="filteredData($event)" [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="assignManagerData" [filterByData]="filterByData"  [type]="'directManagerName'" [reSet]="reSet"></filter>
+        </th>
+        <th>
+         Work Supervisor
+          <filter (filteredData)="filteredData($event)" [selectedPositions] = "selectedPositions" [showPosition]="showPosition" [manageData]="assignManagerData" [filterByData]="filterByData"  [type]="'workSupervisorName'" [reSet]="reSet"></filter>
+        </th>
+
+      </tr>
+      </thead>
+      <tbody class="assignManagerTbody" when-scroll="loadData()">
+      <tr *ngFor="let item of filterByData| sortBy:'name':sortReverse" (click)="changeReq(item)" (toggleChangeReqModal)="toggleChangeReqModal()">
+        <td><span>{{item.name}}</span><sub><span class="empid">{{item.employeeId}}</span></sub></td>
+        <td>{{item.position}}</td>
+        <td>{{item.departement}}</td>
+        <td>{{item.location}}</td>
+        <td>{{item.directManagerName}}</td>
+        <td>{{item.workSupervisorName}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<change-request *ngIf="showChangeReq" [changeReqData]="changeReqData" (toggleChangeReqModal)="toggleChangeReqModal($event)" [assignManagerData]="assignManagerData"></change-request>

@@ -1,0 +1,92 @@
+<div *ngIf="data.isCheckOut">
+    <label id="assignToMe" class="work-inbox-list-icons" (click)="assignToMe()">
+        <span class="glyphicon glyphicon-download-alt"  title="Assign this task to myself"></span>
+        <span class="icon-icon_" title="Assign this task to myself"  style="display: flex">Assign to Me</span>
+    </label>
+</div>
+<div *ngIf="data.actions.indexOf('i9-authorization')>=0 ">
+    <a id="i9-authorization" target="_blank" href="#/ssowidget/I9admin">
+        <label  class="work-inbox-list-icons">
+            <span class="glyphicon glyphicon-download-alt"  title="I-9 Authorization of this task"></span>
+            <span class="icon-icon_" title="I-9 Authorization of this task"  style="display: flex;">I-9 Authorization</span>
+        </label>
+    </a>
+</div>
+
+<div *ngIf="data.actions.indexOf('new-hire-authorization') >= 0">
+    <a id="new-hire-authorization" target="_blank" href="../ui/NewHire/NewHireUpdate.html?Positionid={{positionId}}">
+        <label  class="work-inbox-list-icons">
+            <span class="glyphicon glyphicon-download-alt"  title="New Hire Authorization of this task"></span>
+            <span class="icon-icon_" title="New Hire Authorization of this task"  style="display: flex;">Authorization</span>
+        </label>
+    </a>
+</div>
+
+<div *ngIf="data.actions.indexOf('leave-request-notification') >= 0">
+    <a id="leave-request-notification" target="_blank" href="{{lrUrl}}">
+        <label  class="work-inbox-list-icons">
+            <span class="glyphicon glyphicon-download-alt"  title="Leave Request Notification of this task"></span>
+            <span class="icon-icon_" title="Leave Request Notification of this task"  style="display: flex;">Leave Request</span>
+        </label>
+    </a>
+</div>
+
+
+<div *ngIf="data.actions.indexOf('Approve') >= 0">
+  <label id="approve" (click)="openApproveAndDeclineModal('approve')" class="work-inbox-list-icons">
+    <span class="glyphicon glyphicon-thumbs-up  small iconClass"  title="Approve this task"></span>
+    <span class="icon-icon_" title="Approve this entry" style="display: flex;color:green">Approve</span>
+  </label>
+</div>
+
+<div *ngIf="data.actions.indexOf('Decline') >= 0">
+  <label id="decline" (click)="openApproveAndDeclineModal('decline')" class="work-inbox-list-icons">
+    <span class="glyphicon glyphicon-thumbs-down  small iconClass" title="Decline this task"></span>
+    <span class="icon-icon_" title="Decline this entry" style="display: flex;color:darkred">Decline</span>
+  </label>
+</div>
+
+<div *ngIf="data.actions.indexOf('Edit') >= 0">
+    <label id="edit" class="work-inbox-list-icons">
+        <span class="icon-icon_comment  medium iconClass" title="Details of this task"></span>
+        <span class="icon-icon_" title="Edit this entry"  style="display: flex;">Edit</span>
+    </label>
+</div>
+<div *ngIf="data.actions.indexOf('Delete') >= 0">
+    <label id="delete" (click)="archiveTask(data,'delete')" class="work-inbox-list-icons">
+        <span class="icon-icon_comment  medium iconClass" title="Delete this task"></span>
+        <span class="icon-icon_" title="Delete this entry"  style="display: flex;">Delete</span>
+    </label>
+</div>
+
+<div *ngIf="data.actions.indexOf('Archive') >= 0">
+    <label id="archive" class="work-inbox-list-icons" (click)="archiveTask('archive',data)" >
+        <span class="glyphicon glyphicon-list small iconClass" title="Archive this task"></span>
+        <span class="icon-icon_" title="Archive this entry" style="display: flex">Archive</span>
+    </label>
+</div>
+
+<div *ngIf="data.actions.indexOf('History') >= 0">
+    <label id="history" (click)="openHistory()" class="work-inbox-list-icons">
+        <span class="glyphicon glyphicon-time  small iconClass" title="History of this task"></span>
+        <span class="icon-icon_" title="View History" style="display: flex">History</span>
+    </label>
+</div>
+
+<div *ngIf="data.actions.indexOf('Details') >= 0">
+  <label id="details" (click)="openDetails()" class="work-inbox-list-icons">
+    <span class="glyphicon glyphicon-comment small iconClass" title="Details of this task"></span>
+    <span class="icon-icon_" title="View Details" style="display: flex">Details</span>
+  </label>
+</div>
+
+
+<confirm-modal *ngIf="isOpenedconfirm" [category]="category" [confirmData]="confirmData" (toggleconfirmModal)="toggleconfirmModal()"></confirm-modal>
+<details-modal *ngIf="isOpenedDetails" [userData]="data"  (toggleDetailsModal)="toggleDetailsModal()"></details-modal>
+<approve-decline *ngIf="isOpenApproveDecline" [category]="category" [type]="selectedType" [userData]="data" (toggleApproveDecline)="toggleApproveDecline()"></approve-decline>
+
+
+
+
+
+

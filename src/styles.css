@@ -1,0 +1,118 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color:#EEF0F2;
+}
+.modal-dialog {
+  position: relative;
+  width: 830px !important;
+  margin: 30px auto  !important;
+}
+accordion-group .panel-default .panel-heading {
+  color: #333;
+  background-color: white;
+  border-color: #ddd;
+  padding: 30px 15px;
+}
+accordion-group .panel-title{
+  padding-left: 25px;
+}
+
+accordion-group .panel-default {
+  border-color: white;
+  margin: 10px 0;
+  padding: 0;
+}
+accordion-group .panel {
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+accordion-group .panel-body {
+  /*padding-left: 40px;*/
+  padding: 0 !important;
+}
+
+.panel-default>.panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #0073CF;
+}
+ .glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+   color: #0073CF;
+  -moz-osx-font-smoothing: grayscale;
+}
+assign-manager .glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  color: black;
+  -moz-osx-font-smoothing: grayscale;
+}
+#changeReqModal .modal-dialog {
+  position: relative;
+  height: 900px !important;
+  width: 650px !important;
+  margin: 30px auto !important;
+}
+#changeReqModal  .modal-header {
+  padding: 15px;
+  border-bottom: none !important;
+}
+#changeReqModal  .modal-footer {
+ /* padding: 15px;*/
+  text-align: right;
+   border-top: none !important;
+  padding-top: 94%;
+}
+#changeReqModal  .modal-title {
+   text-align:center;
+}
+#changeReqModal .modal-body .section {
+  padding: 20px 0 !important;
+  border-bottom: 1px solid #ddd !important;
+  float: left !important;
+  width: 100% !important;
+}
+.mydp .btnleftborder {
+  border:none!important;
+}
+ .mydp .btnpicker {
+  color: dodgerblue !important;
+}
+.mydp  {
+  width: 55% !important;
+  font-size:12px !important;
+}
+.mydp .selection {
+  outline: 0;
+  background-color: #FFF;
+  display: table-cell;
+  position: absolute;
+  width: 100%;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 12px !important;
+}
